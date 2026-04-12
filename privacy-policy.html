@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — TuckIn</title>
+  <meta name="description" content="TuckIn Privacy Policy — how we handle your health and sleep data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: rgba(255,255,255,0.07);
+      --accent: #c8b8ff;
+      --accent-dim: rgba(200,184,255,0.08);
+      --accent-border: rgba(200,184,255,0.18);
+      --text: #e8e4f0;
+      --muted: #6e6880;
+      --mono: 'DM Mono', monospace;
+      --serif: 'Fraunces', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--mono);
+      font-weight: 300;
+      font-size: 14.5px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.025;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      top: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 500px;
+      background: radial-gradient(ellipse, rgba(200,184,255,0.07) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav a.home-link {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-pill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+    }
+
+    .logo-pill svg {
+      width: 16px;
+      height: 16px;
+      fill: var(--accent);
+    }
+
+    .logo-name {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.025em;
+    }
+
+    nav .back {
+      margin-left: auto;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav .back:hover { color: var(--accent); }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 72px 24px 120px;
+    }
+
+    .page-header {
+      margin-bottom: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 22px;
+      opacity: 0.85;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 6vw, 54px);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    h1 em { font-style: italic; }
+
+    .meta {
+      font-size: 12.5px;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+    .meta span { color: var(--text); }
+
+    .callout {
+      background: var(--accent-dim);
+      border: 1px solid var(--accent-border);
+      border-radius: 10px;
+      padding: 22px 26px;
+      margin-bottom: 56px;
+      font-size: 14px;
+      color: #c5bfe0;
+      line-height: 1.7;
+    }
+
+    section {
+      margin-bottom: 52px;
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
+
+    p {
+      color: #b0aac4;
+      margin-bottom: 14px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    .data-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .data-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      color: #b0aac4;
+      font-size: 13.5px;
+    }
+
+    .data-list li::before {
+      content: '—';
+      color: var(--accent);
+      opacity: 0.45;
+      flex-shrink: 0;
+    }
+
+    .no-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .no-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.025);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+      color: #9e98b8;
+    }
+
+    .no-item .x {
+      font-size: 10px;
+      color: rgba(200,184,255,0.4);
+      flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-box p {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .contact-box a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.2s;
+    }
+    .contact-box a:hover { opacity: 0.7; }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 32px 24px 48px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      main { padding: 48px 20px 80px; }
+      .no-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="home-link">
+      <div class="logo-pill">
+        <!-- Moon icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
+        </svg>
+      </div>
+      <span class="logo-name">TuckIn</span>
+    </a>
+    <a href="/" class="back">← Home</a>
+  </nav>
+
+  <main>
+    <header class="page-header">
+      <p class="label">Legal</p>
+      <h1>Privacy<br><em>Policy</em></h1>
+      <p class="meta">Last updated: <span>April 12, 2026</span></p>
+    </header>
+
+    <div class="callout">
+      TuckIn is a sleep tracking and optimization app. Your privacy is fundamental to how we built this app — all health data processing happens entirely on your device. We do not collect, transmit, or store any of your personal health data on external servers.
+    </div>
+
+    <section>
+      <h2>Data We Access</h2>
+      <p>TuckIn reads the following data from Apple Health (HealthKit) with your explicit permission:</p>
+      <ul class="data-list">
+        <li>Sleep analysis (sleep stages, duration, bed/wake times)</li>
+        <li>Heart rate and resting heart rate</li>
+        <li>Heart rate variability (HRV)</li>
+        <li>Active energy burned</li>
+        <li>Apple exercise time</li>
+        <li>Physical effort (METs)</li>
+        <li>Date of birth and biological sex (for personalized sleep need calculations)</li>
+      </ul>
+      <p style="margin-top:18px;">This data is used solely to calculate your sleep metrics, strain, recovery score, and personalized sleep recommendations. TuckIn does not write any data back to Apple Health.</p>
+    </section>
+
+    <section>
+      <h2>Data Storage &amp; iCloud Sync</h2>
+      <p>TuckIn stores the following data using Apple's SwiftData framework:</p>
+      <ul class="data-list">
+        <li>Calculated sleep metrics (up to 45 days of history)</li>
+        <li>Heart rate and strain data (up to 45 days of history)</li>
+        <li>Your preferences (wake-up time, sleep goal, alarm settings)</li>
+      </ul>
+      <p style="margin-top:18px;">This data may be synced across your devices using Apple's iCloud (CloudKit). This sync is handled entirely by Apple's infrastructure and is subject to Apple's privacy policy. We do not operate any servers and have no access to your iCloud data. You can disable iCloud sync for TuckIn in your device's iCloud settings.</p>
+    </section>
+
+    <section>
+      <h2>Anonymous Diagnostic Data</h2>
+      <p>To improve the accuracy of our sleep and strain calculations, TuckIn uploads anonymous, aggregated diagnostic data to Apple's CloudKit public database. This data includes:</p>
+      <ul class="data-list">
+        <li>Computed sleep metrics (sleep duration, efficiency, sleep stages, sleep debt, sleep performance)</li>
+        <li>Computed strain and recovery values (activity strain, HRV strain, recovery score)</li>
+        <li>Sleep need calculations (healthy sleep need, strain-based need)</li>
+        <li>A randomly generated device identifier — not linked to your Apple ID, name, or any personal information</li>
+        <li>App version and iOS version</li>
+      </ul>
+      <p style="margin-top:18px;">This data does not include your name, Apple ID, email address, location, raw HealthKit samples, or any other personally identifiable information. The anonymous device identifier is generated randomly at install time and cannot be used to identify you. This diagnostic data is used solely to validate that the app's calculations are working correctly across different users and sleep patterns.</p>
+    </section>
+
+    <section>
+      <h2>Notifications</h2>
+      <p>TuckIn can send local notifications for wake-up alarms and bedtime reminders. These are scheduled entirely on your device and do not involve any external servers.</p>
+    </section>
+
+    <section>
+      <h2>No Personal Data Collection or Sharing</h2>
+      <p>TuckIn does <strong style="color:var(--text);font-weight:400;">not</strong>:</p>
+      <div class="no-grid">
+        <div class="no-item"><span class="x">✕</span> Collect or transmit personal health data to external servers</div>
+        <div class="no-item"><span class="x">✕</span> Use analytics, tracking, or crash reporting services</div>
+        <div class="no-item"><span class="x">✕</span> Share data with third parties</div>
+        <div class="no-item"><span class="x">✕</span> Display advertisements</div>
+        <div class="no-item"><span class="x">✕</span> Use cookies or similar tracking technologies</div>
+        <div class="no-item"><span class="x">✕</span> Require accounts or server-side sign-in</div>
+      </div>
+      <p style="margin-top:18px;">The only data transmitted from your device is the anonymous diagnostic data described above, sent via Apple's CloudKit infrastructure.</p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>TuckIn uses only Apple-provided frameworks — HealthKit, SwiftData, CloudKit, and AlarmKit. No third-party SDKs or services are integrated into the app.</p>
+    </section>
+
+    <section>
+      <h2>Data Retention &amp; Deletion</h2>
+      <p>All personal data is stored on your device and may be synced to your iCloud account. Deleting the TuckIn app removes all locally stored data. To remove iCloud data, you can manage your iCloud storage in your device's Settings. You can also revoke HealthKit permissions at any time through the iOS Settings app.</p>
+      <p>Anonymous diagnostic data stored in CloudKit's public database may be retained for quality assurance purposes. This data cannot be linked back to you.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>TuckIn does not knowingly collect data from children under 13. The app relies on Apple Health data which is subject to Apple's own age restrictions.</p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>If we update this privacy policy, the changes will be reflected in an app update. The "Last updated" date at the top will be revised accordingly.</p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Contact</h2>
+      <p style="margin-bottom:16px;">Questions about this privacy policy? Reach out:</p>
+      <div class="contact-box">
+        <p>Email us at</p>
+        <a href="mailto:support@velocitylabs.dev">support@velocitylabs.dev</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <a href="/">TuckIn</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
+  </footer>
+
+</body>
+</html>
