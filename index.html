@@ -175,9 +175,13 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
 .success-msg.visible{display:block}
 .error-msg{display:none;margin-top:10px;font-family:'DM Mono',monospace;font-size:10px;color:#ff8080}
 .error-msg.visible{display:block}
-.counter-row{display:flex;align-items:center;gap:12px;margin-top:36px}
-.counter-n{font-family:'Fraunces',serif;font-weight:300;font-size:40px;color:var(--accent);line-height:1}
-.counter-desc{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);line-height:1.7}
+.tf-cta-wrap{margin-bottom:36px}
+.tf-btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#7b6fd4 0%,#5190b5 100%);border-radius:14px;padding:16px 28px;font-family:'DM Mono',monospace;font-size:13px;letter-spacing:0.04em;color:#fff;text-decoration:none;transition:opacity 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 4px 24px rgba(123,111,212,0.3)}
+.tf-btn:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 8px 32px rgba(123,111,212,0.4)}
+.tf-hint{margin-top:12px;font-family:'DM Mono',monospace;font-size:10px;color:rgba(237,233,224,0.22);letter-spacing:0.04em}
+.waitlist-fallback{margin-top:40px;padding-top:32px;border-top:1px solid var(--border)}
+.waitlist-label{font-family:'Fraunces',serif;font-weight:300;font-size:13px;color:var(--muted);margin-bottom:16px;line-height:1.6}
+.submit-sm{padding:12px 20px;font-size:10px}
 
 /* ── FOOTER ── */
 .footer{max-width:1140px;margin:0 auto;padding:0 56px 56px}
@@ -394,21 +398,27 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
 
     <section class="form-section z1">
       <div class="form-inner">
-        <div class="form-eyebrow">Early Access</div>
-        <h2 class="form-heading">Be the first<br>to <em>TuckIn.</em></h2>
-        <p class="form-sub">Join the TestFlight waitlist. No spam — we'll send your invite when a spot opens.</p>
-        <form id="waitlist-form">
-          <div class="form-row">
-            <input type="email" id="email-input" placeholder="your@email.com" required autocomplete="email"/>
-            <button type="submit" class="submit-btn" id="submit-btn">Join waitlist →</button>
-          </div>
-          <p class="form-hint">TestFlight invite sent when a spot opens.</p>
-          <div class="success-msg" id="success-msg">✦  You're on the list. Invite coming soon.</div>
-          <div class="error-msg" id="error-msg">Something went wrong — try again.</div>
-        </form>
-        <div class="counter-row">
-          <div class="counter-n" id="counter">—</div>
-          <div class="counter-desc">people already<br>on the waitlist</div>
+        <div class="form-eyebrow">Now on TestFlight</div>
+        <h2 class="form-heading">Try it<br><em>tonight.</em></h2>
+        <p class="form-sub">TuckIn is live on TestFlight. Download free, try it for a week, and sleep like you mean it.</p>
+        <div class="tf-cta-wrap">
+          <a href="https://testflight.apple.com/join/ErpzH5Sk" target="_blank" rel="noopener" class="tf-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0"><path d="M10 1.667C5.397 1.667 1.667 5.397 1.667 10S5.397 18.333 10 18.333 18.333 14.603 18.333 10 14.603 1.667 10 1.667zm4.583 7.083l-5 5a.833.833 0 01-1.178 0l-2.5-2.5a.833.833 0 111.178-1.178L9 12.156l4.41-4.41a.833.833 0 111.178 1.178l-.005-.006V8.75z" fill="currentColor"/></svg>
+            <span>Download on TestFlight</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;opacity:0.6"><path d="M2.5 7H11.5M11.5 7L8 3.5M11.5 7L8 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <p class="tf-hint">Free beta · Requires iPhone with Apple Watch · iOS 17+</p>
+        </div>
+        <div class="waitlist-fallback">
+          <p class="waitlist-label">No Apple Watch yet? Leave your email — we'll notify you when TuckIn hits the App Store.</p>
+          <form id="waitlist-form">
+            <div class="form-row">
+              <input type="email" id="email-input" placeholder="your@email.com" autocomplete="email"/>
+              <button type="submit" class="submit-btn submit-sm" id="submit-btn">Notify me →</button>
+            </div>
+            <div class="success-msg" id="success-msg">✦  Got it — we'll ping you at launch.</div>
+            <div class="error-msg" id="error-msg">Something went wrong — try again.</div>
+          </form>
         </div>
       </div>
     </section>
@@ -417,7 +427,7 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
       <div class="divider-line"></div>
       <div class="footer-row">
         <span class="footer-copy">© 2026 TuckIn · Built for Apple · <a href="https://twitter.com/gravity_vi" target="_blank">@gravity_vi</a></span>
-        <span class="footer-copy">TestFlight Beta</span>
+        <span class="footer-copy"><a href="https://testflight.apple.com/join/ErpzH5Sk" target="_blank">Join TestFlight →</a></span>
       </div>
     </footer>
 
@@ -448,11 +458,7 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
   document.getElementById('lock-time').textContent=now.getHours()+':'+String(now.getMinutes()).padStart(2,'0');
   document.getElementById('lock-date').textContent=days[now.getDay()]+', '+months[now.getMonth()]+' '+now.getDate();
 
-  // Counter
-  const WAITLIST_COUNT=47;
-  const counterEl=document.getElementById('counter');
-  let cur=0;
-  const ct=setInterval(()=>{cur=Math.min(cur+Math.ceil(WAITLIST_COUNT/45),WAITLIST_COUNT);counterEl.textContent=cur;if(cur>=WAITLIST_COUNT)clearInterval(ct);},25);
+  // Counter removed — TestFlight link is live
 
   // ── INTRO ──
   const delay = ms => new Promise(r => setTimeout(r, ms));
@@ -615,6 +621,7 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
   document.getElementById('waitlist-form').addEventListener('submit', async e => {
     e.preventDefault();
     const email = document.getElementById('email-input').value.trim();
+    if (!email) return;
     const btn = document.getElementById('submit-btn');
     const ok  = document.getElementById('success-msg');
     const err = document.getElementById('error-msg');
@@ -630,11 +637,10 @@ input[type="email"]:focus{border-color:rgba(196,181,255,0.35);box-shadow:0 0 0 3
         ok.classList.add('visible');
         document.getElementById('email-input').value = '';
         btn.textContent = '✓ Done';
-        counterEl.textContent = parseInt(counterEl.textContent) + 1;
       } else throw new Error();
     } catch {
       err.classList.add('visible');
-      btn.disabled = false; btn.textContent = 'Join waitlist →';
+      btn.disabled = false; btn.textContent = 'Notify me →';
     }
   });
 </script>
