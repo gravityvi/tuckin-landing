@@ -1,427 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — TuckIn</title>
-  <meta name="description" content="TuckIn Privacy Policy — how we handle your health and sleep data." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0a0f;
-      --surface: #111118;
-      --border: rgba(255,255,255,0.07);
-      --accent: #c8b8ff;
-      --accent-dim: rgba(200,184,255,0.08);
-      --accent-border: rgba(200,184,255,0.18);
-      --text: #e8e4f0;
-      --muted: #6e6880;
-      --mono: 'DM Mono', monospace;
-      --serif: 'Fraunces', Georgia, serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--mono);
-      font-weight: 300;
-      font-size: 14.5px;
-      line-height: 1.8;
-      min-height: 100vh;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.025;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      top: -300px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 700px;
-      height: 500px;
-      background: radial-gradient(ellipse, rgba(200,184,255,0.07) 0%, transparent 65%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      padding: 18px 40px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav a.home-link {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-pill {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-    }
-
-    .logo-pill svg {
-      width: 16px;
-      height: 16px;
-      fill: var(--accent);
-    }
-
-    .logo-name {
-      font-family: var(--serif);
-      font-size: 19px;
-      font-weight: 400;
-      color: var(--text);
-      letter-spacing: -0.025em;
-    }
-
-    nav .back {
-      margin-left: auto;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    nav .back:hover { color: var(--accent); }
-
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 72px 24px 120px;
-    }
-
-    .page-header {
-      margin-bottom: 60px;
-      padding-bottom: 48px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .label {
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 22px;
-      opacity: 0.85;
-    }
-
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(38px, 6vw, 54px);
-      font-weight: 300;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-
-    h1 em { font-style: italic; }
-
-    .meta {
-      font-size: 12.5px;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-    .meta span { color: var(--text); }
-
-    .callout {
-      background: var(--accent-dim);
-      border: 1px solid var(--accent-border);
-      border-radius: 10px;
-      padding: 22px 26px;
-      margin-bottom: 56px;
-      font-size: 14px;
-      color: #c5bfe0;
-      line-height: 1.7;
-    }
-
-    section {
-      margin-bottom: 52px;
-    }
-
-    h2 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    h2::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--accent);
-      opacity: 0.55;
-      flex-shrink: 0;
-    }
-
-    p {
-      color: #b0aac4;
-      margin-bottom: 14px;
-    }
-    p:last-child { margin-bottom: 0; }
-
-    .data-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .data-list li {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      color: #b0aac4;
-      font-size: 13.5px;
-    }
-
-    .data-list li::before {
-      content: '—';
-      color: var(--accent);
-      opacity: 0.45;
-      flex-shrink: 0;
-    }
-
-    .no-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .no-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.025);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 13px;
-      color: #9e98b8;
-    }
-
-    .no-item .x {
-      font-size: 10px;
-      color: rgba(200,184,255,0.4);
-      flex-shrink: 0;
-      letter-spacing: 0.05em;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 56px 0;
-    }
-
-    .contact-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 28px 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .contact-box p {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .contact-box a {
-      color: var(--accent);
-      text-decoration: none;
-      font-size: 15px;
-      letter-spacing: 0.01em;
-      transition: opacity 0.2s;
-    }
-    .contact-box a:hover { opacity: 0.7; }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: 32px 24px 48px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent); }
-
-    @media (max-width: 600px) {
-      nav { padding: 16px 20px; }
-      main { padding: 48px 20px 80px; }
-      .no-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Privacy Policy · TuckIn</title>
+<meta name="description" content="How TuckIn handles your health and sleep data: processed on your device, no accounts, Apple frameworks only.">
+<meta property="og:title" content="TuckIn Privacy Policy">
+<meta property="og:description" content="Your health data is processed on your device. No accounts, no ads, no third-party SDKs.">
+<meta name="theme-color" content="#000322">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XF56RBVL63"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XF56RBVL63');</script>
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap">
+<style>
+:root{color-scheme:dark;--night:#000322;--night-2:#070A33;--night-3:#10134A;--n-line:rgba(165,165,255,.15);--n-ink:#EDEDFC;--n-muted:#A6A8D2;--n-faint:#7072A6;--indigo:#5E5CE6;--moon:#A3A1FF;--amber:#F59E0B;--sun:#F6B048;
+--f-body:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--f-serif:"Newsreader",Georgia,serif;--f-mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--night);color:var(--n-ink);font-family:var(--f-body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1060px;margin-inline:auto;padding-inline:20px}
+h1,h2{margin:0;font-weight:300;letter-spacing:-.025em;text-wrap:balance;line-height:1.08}
+em{font-family:var(--f-serif);font-style:italic;font-weight:400;color:var(--moon)}
+p{margin:0}a{color:inherit}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:8px}
+.navbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;padding:12px 16px 0;pointer-events:none}
+.nav{pointer-events:auto;max-width:1060px;margin-inline:auto;display:flex;align-items:center;gap:14px;padding:7px 7px 7px 12px;border-radius:999px;background:rgba(5,7,38,.74);-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1px solid var(--n-line)}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;letter-spacing:-.01em;text-decoration:none;font-size:1.02rem}
+.brand svg{width:32px;height:32px;flex:none}
+.back{margin-left:auto;font-size:.92rem;color:var(--n-muted);text-decoration:none}.back:hover{color:var(--n-ink)}
+.getapp{background:var(--n-ink);color:var(--night);text-decoration:none;font-weight:600;font-size:.9rem;border-radius:999px;padding:9px 16px;white-space:nowrap;transition:background .2s}.getapp:hover{background:#fff}
+.hero{position:relative;overflow:hidden;margin-top:-62px;padding:clamp(120px,16vw,180px) 0 clamp(56px,8vw,96px);border-bottom:1px solid var(--n-line);background:radial-gradient(900px 420px at 78% 0%,rgba(94,92,230,.22),transparent 70%),var(--night)}
+canvas.stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:22px;max-width:1060px}
+.eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--n-muted)}
+h1{font-size:clamp(2.6rem,6.4vw,4.8rem)}
+.lede{font-size:1.14rem;color:var(--n-muted);max-width:36em}
+.meta{font-size:.82rem;color:var(--n-faint)}.meta b{font-weight:500;color:var(--n-muted)}
+.wave{position:absolute;left:0;right:0;bottom:-1px;height:70px;opacity:.5;pointer-events:none}
+.layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:clamp(28px,6vw,72px);padding-block:clamp(48px,7vw,88px)}
+.toc{position:sticky;top:92px;align-self:start;display:grid;gap:2px;font-size:.88rem}
+.toc a{display:flex;gap:10px;padding:7px 10px;border-radius:10px;color:var(--n-muted);text-decoration:none;line-height:1.35}
+.toc a span{color:var(--n-faint);font-size:.75rem;padding-top:2px}
+.toc a:hover{background:rgba(255,255,255,.05);color:var(--n-ink)}
+article{display:grid;gap:14px;min-width:0}
+.promise{display:grid;gap:10px;padding:26px 28px;border-radius:22px;border:1px solid var(--n-line);background:linear-gradient(160deg,rgba(94,92,230,.2),rgba(245,158,11,.06) 70%),var(--night-2);margin-bottom:22px}
+.promise b{font-weight:500;color:#fff}
+.promise p{color:#CFD0EE}
+section{padding:30px 0;border-top:1px solid var(--n-line);display:grid;gap:14px}
+section:first-of-type{border-top:0}
+h2{font-size:clamp(1.5rem,3vw,1.95rem);display:flex;align-items:baseline;gap:14px}
+h2 .n{font-size:.78rem;color:var(--amber);letter-spacing:.06em;flex:none}
+section p{color:#B9BBDD;max-width:46em}
+section p strong{color:var(--n-ink);font-weight:500}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.list li{position:relative;padding-left:22px;color:#C4C6E6;font-size:.96rem}
+.list li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--indigo);box-shadow:0 0 0 3px rgba(94,92,230,.2)}
+.nogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.no{display:flex;align-items:center;gap:12px;padding:13px 16px;border-radius:14px;border:1px solid var(--n-line);background:var(--night-2);font-size:.92rem;color:#C4C6E6}
+.no .x{width:22px;height:22px;flex:none;display:grid;place-items:center;border-radius:50%;background:rgba(245,158,11,.14);color:var(--sun);font-size:.7rem}
+.contact{display:grid;gap:6px;padding:26px 28px;border-radius:22px;border:1px solid var(--n-line);background:var(--night-2);margin-top:6px}
+.contact span{color:var(--n-muted);font-size:.9rem}
+.contact a{font-size:1.3rem;font-weight:500;letter-spacing:-.01em;text-decoration:none;color:var(--n-ink);width:max-content;max-width:100%;overflow-wrap:anywhere}
+.contact a:hover{color:var(--sun)}
+footer{border-top:1px solid var(--n-line);padding-block:30px;font-size:.86rem;color:var(--n-muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}footer a{text-decoration:none}footer a:hover{color:var(--n-ink)}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.toc{display:none}}
+@media(max-width:420px){.brand span{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-
-  <nav>
-    <a href="/" class="home-link">
-      <div class="logo-pill">
-        <!-- Moon icon -->
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/>
-        </svg>
-      </div>
-      <span class="logo-name">TuckIn</span>
-    </a>
-    <a href="/" class="back">← Home</a>
-  </nav>
-
-  <main>
-    <header class="page-header">
-      <p class="label">Legal</p>
-      <h1>Privacy<br><em>Policy</em></h1>
-      <p class="meta">Last updated: <span>April 12, 2026</span></p>
-    </header>
-
-    <div class="callout">
-      TuckIn is a sleep tracking and optimization app. Your privacy is fundamental to how we built this app — all health data processing happens entirely on your device. We do not collect, transmit, or store any of your personal health data on external servers.
-    </div>
-
-    <section>
-      <h2>Data We Access</h2>
-      <p>TuckIn reads the following data from Apple Health (HealthKit) with your explicit permission:</p>
-      <ul class="data-list">
-        <li>Sleep analysis (sleep stages, duration, bed/wake times)</li>
-        <li>Heart rate and resting heart rate</li>
-        <li>Heart rate variability (HRV)</li>
-        <li>Active energy burned</li>
-        <li>Apple exercise time</li>
-        <li>Physical effort (METs)</li>
-        <li>Date of birth and biological sex (for personalized sleep need calculations)</li>
-      </ul>
-      <p style="margin-top:18px;">This data is used solely to calculate your sleep metrics, strain, recovery score, and personalized sleep recommendations. TuckIn does not write any data back to Apple Health.</p>
-    </section>
-
-    <section>
-      <h2>Data Storage &amp; iCloud Sync</h2>
-      <p>TuckIn stores the following data using Apple's SwiftData framework:</p>
-      <ul class="data-list">
-        <li>Calculated sleep metrics (up to 45 days of history)</li>
-        <li>Heart rate and strain data (up to 45 days of history)</li>
-        <li>Your preferences (wake-up time, sleep goal, alarm settings)</li>
-      </ul>
-      <p style="margin-top:18px;">This data may be synced across your devices using Apple's iCloud (CloudKit). This sync is handled entirely by Apple's infrastructure and is subject to Apple's privacy policy. We do not operate any servers and have no access to your iCloud data. You can disable iCloud sync for TuckIn in your device's iCloud settings.</p>
-    </section>
-
-    <section>
-      <h2>Anonymous Diagnostic Data</h2>
-      <p>To improve the accuracy of our sleep and strain calculations, TuckIn uploads anonymous, aggregated diagnostic data to Apple's CloudKit public database. This data includes:</p>
-      <ul class="data-list">
-        <li>Computed sleep metrics (sleep duration, efficiency, sleep stages, sleep debt, sleep performance)</li>
-        <li>Computed strain and recovery values (activity strain, HRV strain, recovery score)</li>
-        <li>Sleep need calculations (healthy sleep need, strain-based need)</li>
-        <li>A randomly generated device identifier — not linked to your Apple ID, name, or any personal information</li>
-        <li>App version and iOS version</li>
-      </ul>
-      <p style="margin-top:18px;">This data does not include your name, Apple ID, email address, location, raw HealthKit samples, or any other personally identifiable information. The anonymous device identifier is generated randomly at install time and cannot be used to identify you. This diagnostic data is used solely to validate that the app's calculations are working correctly across different users and sleep patterns.</p>
-    </section>
-
-    <section>
-      <h2>Notifications</h2>
-      <p>TuckIn can send local notifications for wake-up alarms and bedtime reminders. These are scheduled entirely on your device and do not involve any external servers.</p>
-    </section>
-
-    <section>
-      <h2>No Personal Data Collection or Sharing</h2>
-      <p>TuckIn does <strong style="color:var(--text);font-weight:400;">not</strong>:</p>
-      <div class="no-grid">
-        <div class="no-item"><span class="x">✕</span> Collect or transmit personal health data to external servers</div>
-        <div class="no-item"><span class="x">✕</span> Use analytics, tracking, or crash reporting services</div>
-        <div class="no-item"><span class="x">✕</span> Share data with third parties</div>
-        <div class="no-item"><span class="x">✕</span> Display advertisements</div>
-        <div class="no-item"><span class="x">✕</span> Use cookies or similar tracking technologies</div>
-        <div class="no-item"><span class="x">✕</span> Require accounts or server-side sign-in</div>
-      </div>
-      <p style="margin-top:18px;">The only data transmitted from your device is the anonymous diagnostic data described above, sent via Apple's CloudKit infrastructure.</p>
-    </section>
-
-    <section>
-      <h2>Third-Party Services</h2>
-      <p>TuckIn uses only Apple-provided frameworks — HealthKit, SwiftData, CloudKit, and AlarmKit. No third-party SDKs or services are integrated into the app.</p>
-    </section>
-
-    <section>
-      <h2>Data Retention &amp; Deletion</h2>
-      <p>All personal data is stored on your device and may be synced to your iCloud account. Deleting the TuckIn app removes all locally stored data. To remove iCloud data, you can manage your iCloud storage in your device's Settings. You can also revoke HealthKit permissions at any time through the iOS Settings app.</p>
-      <p>Anonymous diagnostic data stored in CloudKit's public database may be retained for quality assurance purposes. This data cannot be linked back to you.</p>
-    </section>
-
-    <section>
-      <h2>Children's Privacy</h2>
-      <p>TuckIn does not knowingly collect data from children under 13. The app relies on Apple Health data which is subject to Apple's own age restrictions.</p>
-    </section>
-
-    <section>
-      <h2>Changes to This Policy</h2>
-      <p>If we update this privacy policy, the changes will be reflected in an app update. The "Last updated" date at the top will be revised accordingly.</p>
-    </section>
-
-    <hr />
-
-    <section>
-      <h2>Contact</h2>
-      <p style="margin-bottom:16px;">Questions about this privacy policy? Reach out:</p>
-      <div class="contact-box">
-        <p>Email us at</p>
-        <a href="mailto:support@velocitylabs.dev">support@velocitylabs.dev</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 <a href="/">TuckIn</a> &nbsp;·&nbsp; <a href="/">Home</a></p>
-  </footer>
-
-</body>
-</html>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="markGrad" gradientUnits="userSpaceOnUse" x1="430" y1="0" x2="580" y2="0"><stop offset="0" stop-color="#6563DE"/><stop offset="1" stop-color="#EBA23C"/></linearGradient>
+    <symbol id="mark" viewBox="0 0 1024 1024">
+      <rect width="1024" height="1024" rx="230" fill="#000322"/>
+      <rect x="6" y="6" width="1012" height="1012" rx="225" fill="none" stroke="rgba(190,190,255,.22)" stroke-width="12"/>
+      <path d="M158.0 519.4C161.4 525.1 172.1 542.0 178.5 553.7C184.8 565.5 189.8 578.0 196.2 589.7C202.5 601.4 209.2 613.0 216.7 624.1C224.1 635.2 231.9 646.2 240.8 656.2C249.7 666.2 259.3 676.3 270.1 683.9C281.0 691.6 293.2 699.1 305.9 702.0C318.5 704.9 333.3 704.5 346.1 701.4C358.8 698.3 371.2 690.7 382.2 683.3C393.3 675.9 403.0 666.5 412.4 657.0C421.8 647.5 430.3 637.1 438.5 626.5C446.7 615.9 454.2 604.8 461.4 593.5C468.7 582.2 475.4 570.5 481.9 558.8C488.4 547.0 494.3 534.9 500.4 523.0C506.5 511.1 512.4 499.2 518.5 487.2C524.6 475.2 530.5 462.8 537.0 450.8C543.4 438.9 550.0 427.1 557.1 415.5C564.1 403.9 571.5 392.2 579.2 381.1C586.9 370.0 594.6 359.1 603.3 348.8C611.9 338.4 621.0 328.1 631.0 319.2C641.1 310.4 651.6 300.8 663.6 295.7C675.6 290.6 690.3 287.1 703.0 288.7C715.6 290.3 728.3 298.2 739.5 305.4C750.7 312.6 760.6 322.4 770.1 331.9C779.6 341.4 788.2 351.7 796.6 362.2C805.0 372.7 812.7 383.7 820.3 394.8C828.0 405.9 835.3 417.4 842.4 428.9C849.5 440.5 855.8 453.0 862.9 464.1C870.0 475.2 881.3 490.4 885.0 495.7" fill="none" stroke="url(#markGrad)" stroke-width="34" stroke-linecap="round"/>
+      <path d="M343 505a38 38 0 1 0 25 53a30 30 0 0 1-25-53z" fill="#6E6CEB"/>
+      <g transform="translate(697 478)" fill="#EBA23C"><circle r="19"/><g stroke="#EBA23C" stroke-width="8" stroke-linecap="round" fill="none"><path d="M0-31v-11M0 31v11M-31 0h-11M31 0h11M-22-22l-8-8M22 22l8 8M-22 22l-8 8M22-22l8-8"/></g></g>
+    </symbol>
+    </defs>
+</svg>
+<div class="navbar"><nav class="nav" aria-label="Main">
+<a class="brand" href="/"><svg aria-hidden="true"><use href="#mark"/></svg><span>TuckIn</span></a>
+<a class="back" href="/">← Home</a>
+<a class="getapp" href="https://apps.apple.com/in/app/tuckin-sleep-schedule/id6762119985">Get the app</a>
+</nav></div>
+<header class="hero"><canvas class="stars" aria-hidden="true"></canvas>
+<div class="wrap"><span class="eyebrow">Legal</span><h1>Your sleep data stays <em>on your phone.</em></h1>
+<p class="lede">TuckIn is a sleep schedule app. Everything it works out about your sleep is processed on your device. We don't run servers that hold your health data.</p>
+<p class="meta">Last updated: <b>October 3, 2026</b></p></div></header>
+<div class="wrap layout">
+<nav class="toc" aria-label="On this page"><a href="#s1"><span class="mono">01</span>Data we access</a><a href="#s2"><span class="mono">02</span>Data storage &amp; iCloud sync</a><a href="#s3"><span class="mono">03</span>Anonymous diagnostic data</a><a href="#s4"><span class="mono">04</span>Notifications</a><a href="#s5"><span class="mono">05</span>No personal data collection or sharing</a><a href="#s6"><span class="mono">06</span>Third-party services</a><a href="#s7"><span class="mono">07</span>This website</a><a href="#s8"><span class="mono">08</span>Data retention &amp; deletion</a><a href="#s9"><span class="mono">09</span>Children's privacy</a><a href="#s10"><span class="mono">10</span>Changes to this policy</a><a href="#contact"><span class="mono">··</span>Contact</a></nav>
+<article>
+<div class="promise"><p><b>The short version.</b> TuckIn is a sleep tracking and optimization app. Your privacy is fundamental to how we built this app. All health data processing happens entirely on your device. We do not collect, transmit, or store any of your personal health data on external servers.</p></div>
+<section id="s1"><h2><span class="n mono">01</span>Data we access</h2><p>TuckIn reads the following data from Apple Health (HealthKit) with your explicit permission:</p><ul class="list"><li>Sleep analysis (sleep stages, duration, bed/wake times)</li><li>Heart rate and resting heart rate</li><li>Heart rate variability (HRV)</li><li>Active energy burned</li><li>Apple exercise time</li><li>Physical effort (METs)</li><li>Date of birth and biological sex (for personalized sleep need calculations)</li></ul><p>This data is used solely to calculate your sleep metrics, strain, recovery score, and personalized sleep recommendations. TuckIn does not write any data back to Apple Health.</p></section><section id="s2"><h2><span class="n mono">02</span>Data storage &amp; iCloud sync</h2><p>TuckIn stores the following data using Apple's SwiftData framework:</p><ul class="list"><li>Calculated sleep metrics (up to 45 days of history)</li><li>Heart rate and strain data (up to 45 days of history)</li><li>Your preferences (wake-up time, sleep goal, alarm settings)</li></ul><p>This data may be synced across your devices using Apple's iCloud (CloudKit). This sync is handled entirely by Apple's infrastructure and is subject to Apple's privacy policy. We do not operate any servers and have no access to your iCloud data. You can disable iCloud sync for TuckIn in your device's iCloud settings.</p></section><section id="s3"><h2><span class="n mono">03</span>Anonymous diagnostic data</h2><p>To improve the accuracy of our sleep and strain calculations, TuckIn uploads anonymous, aggregated diagnostic data to Apple's CloudKit public database. This data includes:</p><ul class="list"><li>Computed sleep metrics (sleep duration, efficiency, sleep stages, sleep debt, sleep performance)</li><li>Computed strain and recovery values (activity strain, HRV strain, recovery score)</li><li>Sleep need calculations (healthy sleep need, strain-based need)</li><li>A randomly generated device identifier — not linked to your Apple ID, name, or any personal information</li><li>App version and iOS version</li></ul><p>This data does not include your name, Apple ID, email address, location, raw HealthKit samples, or any other personally identifiable information. The anonymous device identifier is generated randomly at install time and cannot be used to identify you. This diagnostic data is used solely to validate that the app's calculations are working correctly across different users and sleep patterns.</p></section><section id="s4"><h2><span class="n mono">04</span>Notifications</h2><p>TuckIn can send local notifications for wake-up alarms and bedtime reminders. These are scheduled entirely on your device and do not involve any external servers.</p></section><section id="s5"><h2><span class="n mono">05</span>No personal data collection or sharing</h2><p>The TuckIn app does <strong>not</strong>:</p><div class="nogrid"><div class="no"><span class="x" aria-hidden="true">✕</span>Collect or transmit personal health data to external servers</div><div class="no"><span class="x" aria-hidden="true">✕</span>Use analytics, tracking, or crash reporting services</div><div class="no"><span class="x" aria-hidden="true">✕</span>Share data with third parties</div><div class="no"><span class="x" aria-hidden="true">✕</span>Display advertisements</div><div class="no"><span class="x" aria-hidden="true">✕</span>Use cookies or similar tracking technologies</div><div class="no"><span class="x" aria-hidden="true">✕</span>Require accounts or server-side sign-in</div></div><p>The only data transmitted from your device is the anonymous diagnostic data described above, sent via Apple's CloudKit infrastructure.</p></section><section id="s6"><h2><span class="n mono">06</span>Third-party services</h2><p>TuckIn uses only Apple-provided frameworks — HealthKit, SwiftData, CloudKit, and AlarmKit. No third-party SDKs or services are integrated into the app.</p></section><section id="s7"><h2><span class="n mono">07</span>This website</h2><p>This website is separate from the app and the points above are about the app. On the website we use Google Analytics to count visits and which buttons are tapped (for example the App Store button), and Google may set cookies for this. The tuck-in counter on the home page stores only a running total and a per-country count. Your IP address is used briefly in memory to limit abuse and is not stored with the count. The website never reads your health data.</p></section><section id="s8"><h2><span class="n mono">08</span>Data retention &amp; deletion</h2><p>All personal data is stored on your device and may be synced to your iCloud account. Deleting the TuckIn app removes all locally stored data. To remove iCloud data, you can manage your iCloud storage in your device's Settings. You can also revoke HealthKit permissions at any time through the iOS Settings app.</p><p>Anonymous diagnostic data stored in CloudKit's public database may be retained for quality assurance purposes. This data cannot be linked back to you.</p></section><section id="s9"><h2><span class="n mono">09</span>Children's privacy</h2><p>TuckIn does not knowingly collect data from children under 13. The app relies on Apple Health data which is subject to Apple's own age restrictions.</p></section><section id="s10"><h2><span class="n mono">10</span>Changes to this policy</h2><p>If we update this privacy policy, the changes will be reflected in an app update. The "Last updated" date at the top will be revised accordingly.</p></section>
+<section id="contact"><h2>Contact</h2><p>Questions about this privacy policy? Reach out:</p>
+<div class="contact"><span>Email us at</span><a href="mailto:support@velocitylabs.dev">support@velocitylabs.dev</a></div></section>
+</article></div>
+<footer><div class="wrap"><span>© 2026 Velocity Labs · Support: support@velocitylabs.dev</span>
+<nav aria-label="Footer"><a href="/">Home</a><a href="https://x.com/gravity_vi">X · @gravity_vi</a><a href="https://apps.apple.com/in/app/tuckin-sleep-schedule/id6762119985">App Store</a></nav></div></footer>
+<script>(function(){const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;const cv=document.querySelector('canvas.stars'),ctx=cv.getContext('2d');let w,h,stars=[],raf=0,vis=true;
+function size(){const d=Math.min(devicePixelRatio||1,2),r=cv.getBoundingClientRect();w=r.width;h=r.height;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0);let s=7001;const R=()=>(s=(s*9301+49297)%233280)/233280;stars=Array.from({length:Math.round(110*Math.max(w,400)/1200)},()=>({x:R()*w,y:R()*h*.9,r:R()*1.3+.25,p:R()*6.28,v:R()*1.2+.4}));draw(performance.now())}
+function draw(t){ctx.clearRect(0,0,w,h);for(const s of stars){ctx.globalAlpha=reduce?.7:.35+.55*(.5+.5*Math.sin(t/1000*s.v+s.p));ctx.fillStyle='#E6E6FF';ctx.beginPath();ctx.arc(s.x,s.y,s.r,0,6.283);ctx.fill()}ctx.globalAlpha=1}
+function loop(t){draw(t);if(vis&&!reduce)raf=requestAnimationFrame(loop)}
+size();addEventListener('resize',()=>{cancelAnimationFrame(raf);size();if(vis&&!reduce)raf=requestAnimationFrame(loop)});
+if('IntersectionObserver'in window)new IntersectionObserver(e=>{vis=e[0].isIntersecting;cancelAnimationFrame(raf);if(vis&&!reduce)raf=requestAnimationFrame(loop)}).observe(cv);else if(!reduce)raf=requestAnimationFrame(loop)})();</script>
+</body></html>

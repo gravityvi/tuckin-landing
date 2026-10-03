@@ -1,0 +1,17 @@
+name = "tuckin-counter"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# Serve the counter at counter.trytuckin.com (trytuckin.com must be on Cloudflare). Both sites use it.
+routes = [{ pattern = "counter.trytuckin.com", custom_domain = true }]
+
+[vars]
+ALLOWED_ORIGINS = "https://trytuckin.com,https://www.trytuckin.com,https://tuckin.velocitylabs.dev,http://localhost:8080"
+
+[[durable_objects.bindings]]
+name = "COUNTER"
+class_name = "Counter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Counter"]
